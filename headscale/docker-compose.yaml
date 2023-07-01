@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  headscale:
+    container_name: headscale
+    image: headscale/headscale:latest
+    restart: unless-stopped
+    volumes:
+      - ./container-config:/etc/headscale
+      - ./container-data:/var/lib/headscale
+    entrypoint: headscale serve
+    networks:
+      headscale-network:
+
+
+networks:
+  headscale-network:
+    external: true

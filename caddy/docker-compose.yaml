@@ -1,0 +1,21 @@
+services:
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    restart: always
+    networks:
+      headscale-network:
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./container-data:/data
+      - ./container-config:/config
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 80:80
+      - 443:443
+    entrypoint: /usr/bin/caddy run --adapter caddyfile --config /config/Caddyfile
+
+networks:
+  headscale-network:
+    external: true

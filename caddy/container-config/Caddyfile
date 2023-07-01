@@ -1,0 +1,7 @@
+https://headscale.zouying.com {
+	reverse_proxy * http://headscale:8080
+}
+
+https://derper.zouying.com {
+	reverse_proxy * http://derper:19850
+}

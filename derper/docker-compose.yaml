@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  derper:
+    container_name: derper
+    image: fredliang/derper
+    restart: always
+    ports:
+      - 3478:3478/udp
+    environment:
+      - DERP_DOMAIN=derper.zouying.com
+      - DERP_CERT_MODE=letsencrypt
+      - DERP_ADDR=:19850
+
+    networks:
+      headscale-network:
+
+
+networks:
+  headscale-network:
+    external: true
