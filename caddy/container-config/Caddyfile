@@ -5,3 +5,7 @@ https://headscale.zouying.com {
 https://derper.zouying.com {
 	reverse_proxy * http://derper:19850
 }
+
+https://vaultwarden.zouying.com {
+	reverse_proxy * http://prod-docker-node:15050
+}

@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: always
+    security_opt:
+      - label:disable
+    ports:
+      - 15050:80
+    volumes:
+      - ./container-data/data:/data
+      - /etc/localtime:/etc/localtime:ro

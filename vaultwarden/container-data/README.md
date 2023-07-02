@@ -1,0 +1,3 @@
+# README
+
+vaultwarden data directory.
